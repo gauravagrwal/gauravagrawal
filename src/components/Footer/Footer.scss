@@ -1,6 +1,5 @@
-/*--------------------------------------------------------------
-# Credits
---------------------------------------------------------------*/
+$color: #18d26e;
+
 .credits {
     position: fixed;
     right: 0;
@@ -9,8 +8,17 @@
     padding: 15px;
     text-align: right;
     font-size: 13px;
-    color: #fff;
+    color: white;
     z-index: 999999;
+
+    a {
+        color: $color;
+        transition: 0.3s;
+
+        &:hover {
+            color: white;
+        }
+    }
 }
 
 @media (max-width: 992px) {
@@ -19,13 +27,4 @@
         padding: 10px;
         background: rgba(0, 0, 0, 0.8);
     }
-}
-
-.credits a {
-    color: #18d26e;
-    transition: 0.3s;
-}
-
-.credits a:hover {
-    color: #fff;
 }

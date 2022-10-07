@@ -1,4 +1,4 @@
-import './About.css';
+import './About.scss';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 
 export default function About() {

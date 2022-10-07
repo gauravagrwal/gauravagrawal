@@ -3,7 +3,7 @@ import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Resume from '../Resume/Resume';
-import './App.css';
+import './App.scss';
 
 export default function App() {
   return (

@@ -1,0 +1,70 @@
+$color: #18d26e;
+
+// About Section Styling
+.about-me {
+    .content {
+        h3 {
+            font-weight: 700;
+            font-size: 26px;
+            color: $color;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            strong {
+                margin-right: 10px;
+            }
+
+            i {
+                font-size: 16px;
+                margin-right: 5px;
+                color: $color;
+                line-height: 0;
+            }
+        }
+
+        p {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+// Skills Styling
+.skills {
+    .progress {
+        height: 60px;
+        display: block;
+        background: none;
+        border-radius: 0;
+
+        .skill {
+            padding: 10px 0;
+            margin: 0;
+            text-transform: uppercase;
+            display: block;
+            font-weight: 600;
+            color: white;
+
+            .val {
+                float: right;
+                font-style: normal;
+            }
+        }
+    }
+
+    .progress-bar {
+        width: 1px;
+        height: 10px;
+        transition: 0.9s;
+    }
+}
