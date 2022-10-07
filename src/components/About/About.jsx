@@ -3,14 +3,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 
 export default function About() {
     return (
-        <section id='about' className='about'>
-            <div className='about-me container'>
-
-                <div className='section-title'>
-                    <h2>About</h2>
-                    <p>Learn more about me</p>
-                </div>
-
+        <div className='about'>
+            <div className='about-me'>
                 <div className='row'>
                     <div className='col-lg-4' data-aos='fade-right'>
                         <img src='https://gauravagrwal.github.io/img/me.gif' className='img-fluid' alt='profile-img' />
@@ -29,7 +23,7 @@ export default function About() {
                 </div>
             </div>
             <br />
-            <div className='skills container'>
+            <div className='skills'>
                 <div className='section-title'>
                     <h2>Skills</h2>
                 </div>
@@ -81,6 +75,6 @@ export default function About() {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
