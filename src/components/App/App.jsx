@@ -1,16 +1,56 @@
+import { useRef } from 'react';
+
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
-import Header from '../Header/Header';
 import Resume from '../Resume/Resume';
 import './App.scss';
+import './NavBar.scss';
 
 export default function App() {
-  return (
-    <div>
-      <Header />
+  const home = useRef(null);
+  const about = useRef(null);
+  const resume = useRef(null);
+  const portfolio = useRef(null);
+  const contact = useRef(null);
 
-      <section id='about' className='container'>
+  const scrollToSection = (elementRef) => {
+    window.scrollTo({
+      top: elementRef.current.offsetTop,
+      behavior: 'smooth'
+    })
+  }
+  return (
+    <>
+      <header id='App-Header'>
+        <div className='container'>
+
+          <h1><a href='.'>Gaurav Agrawal.</a></h1>
+          <h2>I'm a <span>software developer</span> from India.</h2>
+
+          <nav className='navbar'>
+            <ul>
+              <li className='nav-link active' onClick={() => scrollToSection(home)}>Home</li>
+              <li className='nav-link' onClick={() => scrollToSection(about)}>About</li>
+              <li className='nav-link' onClick={() => scrollToSection(resume)}>Resume</li>
+              <li className='nav-link' onClick={() => scrollToSection(portfolio)}>Portfolio</li>
+              <li className='nav-link' onClick={() => scrollToSection(contact)}>Contact</li>
+            </ul>
+            <i className='bi bi-list' id='App-mobile-nav-toggle'></i>
+          </nav>
+
+          <div id='App-social-links'>
+            <a target='_blank' rel='noreferrer' href='https://www.github.com/gauravagrwal'>
+              <i className='bi bi-github'></i>
+            </a>
+            <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/gauravagrwal'>
+              <i className='bi bi-linkedin'></i>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section ref={about} id='about' className='container'>
         <div className='section-title'>
           <h2>about</h2>
           <p>learn more about me</p>
@@ -20,7 +60,7 @@ export default function App() {
 
       <br />
 
-      <section id='resume' className='container'>
+      <section ref={resume} id='resume' className='container'>
         <div className='section-title'>
           <h2>resume</h2>
           <p>check my resume</p>
@@ -30,7 +70,7 @@ export default function App() {
 
       <br />
 
-      <section id='contact' className='container'>
+      <section ref={contact} id='contact' className='container'>
         <div className='section-title'>
           <h2>contact</h2>
           <p>contact me</p>
@@ -39,6 +79,6 @@ export default function App() {
       </section>
 
       <Footer />
-    </div>
+    </>
   );
 }
